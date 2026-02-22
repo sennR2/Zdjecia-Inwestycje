@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zdjęcia Inwestycje - Dokumentacja Światłowodowa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        .gradient-text { background: linear-gradient(90deg, #a855f7, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .phone-shadow { box-shadow: 0 0 50px -12px rgba(168, 85, 247, 0.4); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 text-xl font-bold italic">
+                <i class="fas fa-camera-retro text-purple-500"></i> Zdjęcia <span class="text-green-500">Inwestycje</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-semibold">
+                <a href="#funkcje" class="hover:text-purple-400 transition">Funkcje</a>
+                <a href="#demo" class="hover:text-purple-400 transition">Interaktywne Demo</a>
+                <a href="#pobierz" class="bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-700 transition text-white">Pobierz Instrukcję PDF</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                Koniec z chaosem w <br><span class="gradient-text">dokumentacji foto</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                Automatyczna segregacja zdjęć, inteligentny magazyn materiałów i synchronizacja grupowa dla ekip światłowodowych.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#demo" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-slate-200 transition">Zobacz jak to działa</a>
+                <div class="flex items-center gap-2 text-slate-400 px-6 py-4">
+                    <i class="fas fa-check text-green-500"></i> Działa Offline
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="py-20 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16 underline decoration-purple-500 underline-offset-8">Interaktywna Prezentacja</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <button onclick="changeScreen('magazyn')" class="w-full text-left p-6 rounded-2xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all group active-btn" id="btn-magazyn">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-purple-500/10 rounded-lg group-hover:bg-purple-500/20"><i class="fas fa-box text-purple-500 text-xl"></i></div>
+                            <div>
+                                <h3 class="font-bold text-lg">Inteligentny Magazyn</h3>
+                                <p class="text-slate-400 text-sm">Rozliczaj metry kabla DAC/ADSS i generuj pliki CSV.</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button onclick="changeScreen('foldery')" class="w-full text-left p-6 rounded-2xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all group" id="btn-foldery">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-green-500/10 rounded-lg group-hover:bg-green-500/20"><i class="fas fa-folder-tree text-green-500 text-xl"></i></div>
+                            <div>
+                                <h3 class="font-bold text-lg">Auto-Foldery i GPS</h3>
+                                <p class="text-slate-400 text-sm">Automatyczne tworzenie struktur: Mufy, Słupy, Studnie.</p>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button onclick="changeScreen('synchro')" class="w-full text-left p-6 rounded-2xl border border-slate-700 bg-slate-800 hover:border-blue-500 transition-all group" id="btn-synchro">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20"><i class="fas fa-users text-blue-500 text-xl"></i></div>
+                            <div>
+                                <h3 class="font-bold text-lg">Synchronizacja Grupowa</h3>
+                                <p class="text-slate-400 text-sm">Wiele ekip, jeden projekt na Google Drive bez duplikatów.</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="flex justify-center relative">
+                    <div class="w-[300px] h-[600px] bg-slate-800 rounded-[3rem] border-8 border-slate-700 relative overflow-hidden phone-shadow">
+                        <img id="phone-display" src="img/1000091580.jpg" alt="Ekran aplikacji" class="w-full h-full object-cover transition-opacity duration-300">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md p-4 text-xs text-center border-t border-slate-700" id="screen-desc">
+                            Sekcja Magazyn: Kontrola pobranych i zużytych materiałów.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-slate-500 border-t border-slate-800 text-sm">
+        <p>&copy; 2024 Zdjęcia Inwestycje. System dedykowany dla branży FTTH.</p>
+    </footer>
+
+    <script>
+        const screens = {
+            magazyn: {
+                img: 'img/1000091580.jpg',
+                desc: 'Sekcja Magazyn: Kontrola pobranych i zużytych materiałów oraz eksport CSV.',
+                color: 'purple'
+            },
+            foldery: {
+                img: 'img/1000091578.jpg',
+                desc: 'Konfiguracja Auto-Folderów: Twoja struktura projektowa tworzy się sama.',
+                color: 'green'
+            },
+            synchro: {
+                img: 'img/1000091575.jpg',
+                desc: 'Status Projektów: Synchronizacja online z dyskiem Google dla wielu ekip.',
+                color: 'blue'
+            }
+        };
+
+        function changeScreen(key) {
+            const display = document.getElementById('phone-display');
+            const desc = document.getElementById('screen-desc');
+            
+            // Efekt przejścia
+            display.style.opacity = '0';
+            
+            setTimeout(() => {
+                display.src = screens[key].img;
+                desc.innerText = screens[key].desc;
+                display.style.opacity = '1';
+                
+                // Resetowanie stylów przycisków
+                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500'));
+                // Dodanie aktywnego obramowania
+                document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
+            }, 300);
+        }
+
+        // Inicjalizacja pierwszego stanu
+        window.onload = () => changeScreen('magazyn');
+    </script>
+</body>
+</html>
