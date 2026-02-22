@@ -13,7 +13,7 @@
         .mobile-menu { display: none; }
         .mobile-menu.active { display: block; }
         
-        /* Poprawiona płynność zmiany ekranu */
+        /* Poprawiona płynność animacji w demo */
         #phone-display { 
             object-fit: contain; 
             background-color: #1e293b; 
@@ -25,10 +25,10 @@
         .feature-card { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(51, 65, 85, 1); transition: all 0.3s ease; height: 100%; }
         .feature-card:hover { border-color: #a855f7; transform: translateY(-5px); background: rgba(30, 41, 59, 0.6); }
         
-        .step-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(51, 65, 85, 1); cursor: pointer; position: relative; overflow: hidden; }
+        .step-btn { transition: all 0.3s ease; border: 1px solid rgba(51, 65, 85, 1); cursor: pointer; }
         .step-btn:hover { background: rgba(51, 65, 85, 0.5); transform: translateX(5px); }
-        
-        /* Animacja wejścia sekcji */
+
+        /* Animacja ujawniania sekcji */
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
@@ -72,6 +72,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-2xl font-bold mb-12 text-center text-slate-300 uppercase tracking-widest italic">Kliknij krok, by zobaczyć ekran:</h2>
             <div class="grid lg:grid-cols-2 gap-10 items-start">
+                
                 <div class="space-y-3 order-2 lg:order-1">
                     <button onclick="changeScreen('glowny')" id="btn-glowny" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800 ring-2 ring-purple-500">
                         <div class="flex items-center gap-4">
@@ -79,30 +80,35 @@
                             <div><h3 class="font-bold text-sm uppercase">1. Panel Główny</h3><p class="text-[10px] text-slate-400 uppercase italic">Zarządzanie projektami.</p></div>
                         </div>
                     </button>
+
                     <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-folder-plus text-green-500 text-xl"></i>
                             <div><h3 class="font-bold text-sm uppercase">2. Nowy Projekt</h3><p class="text-[10px] text-slate-400 uppercase italic">Tworzenie inwestycji.</p></div>
                         </div>
                     </button>
+
                     <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-folder-open text-blue-400 text-xl"></i>
                             <div><h3 class="font-bold text-sm uppercase">3. Struktura Projektu</h3><p class="text-[10px] text-slate-400 uppercase italic">Foldery systemowe.</p></div>
                         </div>
                     </button>
+
                     <button onclick="changeScreen('slupy')" id="btn-slupy" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-camera text-yellow-500 text-xl"></i>
                             <div><h3 class="font-bold text-sm uppercase">4. Praca w Terenie</h3><p class="text-[10px] text-slate-400 uppercase italic">Wykonywanie zdjęć.</p></div>
                         </div>
                     </button>
+
                     <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-save text-orange-500 text-xl"></i>
                             <div><h3 class="font-bold text-sm uppercase">5. Pliki Gotowe</h3><p class="text-[10px] text-slate-400 uppercase italic">Zapis lokalny w pamięci.</p></div>
                         </div>
                     </button>
+
                     <button onclick="changeScreen('sync')" id="btn-sync" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-sync text-red-500 text-xl"></i>
@@ -130,36 +136,22 @@
             <h2 class="text-3xl font-bold uppercase tracking-widest mb-4 italic">O Systemie</h2>
             <div class="h-1 w-24 bg-purple-500 mx-auto"></div>
         </div>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-purple-500 text-3xl mb-4"><i class="fas fa-info-circle"></i></div>
                 <h4 class="font-bold uppercase mb-3 text-sm">1. WPROWADZENIE</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">Zdjęcia Inwestycje to specjalistyczne narzędzie zaprojektowane dla ekip monterskich i inżynierów branży telekomunikacyjnej.</p>
+                <p class="text-slate-400 text-xs leading-relaxed">System eliminuje chaos w galerii telefonu, automatyzuje opisywanie zdjęć i integruje dokumentację z ewidencją materiałową.</p>
             </div>
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-filter"></i></div>
                 <h4 class="font-bold uppercase mb-3 text-sm">2. PANEL GŁÓWNY</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">Aplikacja porządkuje inwestycje według statusów: Wszystko, Gotowe, Rozpoczęte, Rozliczone.</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Filtrowanie projektów według statusów: Wszystko, Gotowe, Rozpoczęte, Rozliczone.</p>
             </div>
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-red-500 text-3xl mb-4"><i class="fas fa-calculator"></i></div>
                 <h4 class="font-bold uppercase mb-3 text-sm">3. MAGAZYN</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">System precyzyjnie śledzi obieg materiałów na budowie. Eksport CSV jednym kliknięciem.</p>
-            </div>
-            <div class="feature-card p-6 rounded-2xl">
-                <div class="text-green-500 text-3xl mb-4"><i class="fas fa-sitemap"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">4. AUTO-FOLDER</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">Automatyczne tworzenie struktury folderów: Projekt, Pomiary, Mufy, Studnie, Słupy.</p>
-            </div>
-            <div class="feature-card p-6 rounded-2xl">
-                <div class="text-cyan-500 text-3xl mb-4"><i class="fas fa-users-cog"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">5. PRACA GRUPOWA</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">Kilka telefonów może pracować nad tym samym zadaniem bez duplikatów w chmurze.</p>
-            </div>
-            <div class="feature-card p-6 rounded-2xl">
-                <div class="text-yellow-500 text-3xl mb-4"><i class="fas fa-bolt"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">6. TRYB OFFLINE</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">Pełna funkcjonalność bez dostępu do sieci. Synchronizacja po powrocie do bazy.</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Śledzenie zużycia materiałów i błyskawiczny eksport raportów do plików CSV.</p>
             </div>
         </div>
     </section>
@@ -170,14 +162,15 @@
                 <h2 class="text-3xl font-bold uppercase tracking-widest mb-4 italic">Licencja i Wsparcie</h2>
                 <div class="h-1 w-24 bg-green-500 mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 text-xs">
+
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
-                    <h4 class="text-purple-400 font-bold uppercase mb-3">Modele subskrypcyjne</h4>
-                    <p class="text-slate-400">Wybierz rozliczenie miesięczne lub abonament roczny. Licencja przypisana do urządzenia.</p>
+                    <h4 class="text-purple-400 font-bold uppercase text-sm mb-3">Modele subskrypcyjne</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Dostępne plany miesięczne oraz roczne. Licencja przypisana do urządzenia montera.</p>
                 </div>
                 <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
-                    <h4 class="text-purple-400 font-bold uppercase mb-3">Większa flota?</h4>
-                    <p class="text-slate-400">Indywidualne wyceny pakietowe dla dużych firm wykonawczych.</p>
+                    <h4 class="text-purple-400 font-bold uppercase text-sm mb-3">Pomoc techniczna</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Zapewniamy wsparcie przy konfiguracji oraz regularne aktualizacje systemu.</p>
                 </div>
             </div>
         </div>
@@ -187,8 +180,8 @@
         <h2 class="text-3xl font-bold mb-6 uppercase italic">Kontakt i Zapytania</h2>
         <div class="max-w-2xl mx-auto mb-10">
             <p class="text-slate-400 text-sm md:text-base leading-relaxed px-4">
-                Masz pytania dotyczące licencji lub potrzebujesz pomocy z konfiguracją? 
-                <span class="block mt-4 text-purple-400 font-semibold italic">Napisz do nas – chętnie pomożemy!</span>
+                Masz pytania dotyczące licencji lub potrzebujesz pomocy przy konfiguracji? 
+                <span class="block mt-4 text-purple-400 font-semibold italic">Napisz do nas – odpowiemy w ciągu 24h!</span>
             </p>
         </div>
         <div class="bg-slate-800/80 p-8 md:p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl inline-block">
@@ -204,12 +197,12 @@
 
     <script>
         const screens = {
-            glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'PANEL GŁÓWNY: Zarządzanie inwestycjami według statusów.' },
-            dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'NOWY PROJEKT: Szybkie tworzenie nowej budowy.' },
-            otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA: Automatyczne foldery dla muf i pomiarów.' },
-            slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'TEREN: Zdjęcia z GPS i opisem w sekundę.' },
-            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'GOTOWE: Pliki zapisane w pamięci telefonu.' },
-            sync: { img: './img/1000091600.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Błyskawiczny przesył na Dysk Google.' }
+            glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów.' },
+            dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'NOWY PROJEKT: Tworzenie inwestycji w kilka sekund.' },
+            otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA: Automatyczne foldery systemowe projektu.' },
+            slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wykonywanie zdjęć z geotagowaniem.' },
+            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'PLIKI GOTOWE: Dokumentacja zapisana lokalnie.' },
+            sync: { img: './img/1000091600.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Przesyłanie na firmowy Dysk Google.' }
         };
 
         function changeScreen(key) {
@@ -218,7 +211,7 @@
             const buttons = document.querySelectorAll('.step-btn');
             
             display.style.opacity = '0';
-            display.style.transform = 'scale(0.95)';
+            display.style.transform = 'scale(0.98)';
             
             setTimeout(() => {
                 display.src = screens[key].img;
@@ -235,15 +228,15 @@
             document.getElementById('mobileMenu').classList.toggle('active');
         }
 
-        // Płynne pojawianie się sekcji podczas przewijania
-        window.addEventListener('scroll', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(r => {
-                const windowHeight = window.innerHeight;
-                const revealTop = r.getBoundingClientRect().top;
-                if (revealTop < windowHeight - 100) r.classList.add('active');
+        // Płynne pojawianie się sekcji przy scrollowaniu
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
     </script>
 </body>
 </html>
