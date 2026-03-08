@@ -236,7 +236,6 @@
         </div>
     </section>
 
-    <section id="kontakt" class="py-20 bg-slate-900 border-t border-slate-800 text-center px-4">
     <section id="kontakt" class="py-20 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6 uppercase italic">Kontakt & Wsparcie</h2>
     
@@ -244,6 +243,7 @@
         <div class="flex flex-wrap justify-center gap-6 mb-8 border-b border-slate-700 pb-6">
             <button onclick="showTab('licencja')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">Licencja</button>
             <button onclick="showTab('faq')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">FAQ</button>
+            <button onclick="showTab('polityka')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">Prywatność</button>
             <button onclick="showTab('email')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">Kontakt</button>
         </div>
 
@@ -272,6 +272,18 @@
             </div>
         </div>
 
+        <div id="tab-polityka" class="tab-content hidden text-left max-w-2xl mx-auto">
+            <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700 max-h-[400px] overflow-y-auto custom-scrollbar">
+                <h3 class="text-purple-400 font-bold mb-4 uppercase">Polityka Prywatności</h3>
+                <div class="text-slate-400 text-sm leading-relaxed space-y-4">
+                    <p><strong>1. Informacje ogólne</strong><br>Aplikacja „Zdjęcia Inwestycje” została stworzona w celu zarządzania dokumentacją zdjęciową. Szanujemy prywatność użytkowników.</p>
+                    <p><strong>2. Dane osobowe</strong><br>Aplikacja nie zbiera ani nie przechowuje danych osobowych. Synchronizacja Google Drive służy wyłącznie do przesyłania Twoich plików na Twój dysk.</p>
+                    <p><strong>3. Uprawnienia</strong><br>Aplikacja wymaga dostępu do aparatu, pamięci i internetu. Wykorzystujemy je wyłącznie do działania funkcji aplikacji.</p>
+                    <p><strong>4. Bezpieczeństwo</strong><br>Twoje zdjęcia są prywatne. Nie posiadamy serwerów, na które wysyłane byłyby Twoje dane.</p>
+                </div>
+            </div>
+        </div>
+
         <div id="tab-email" class="tab-content">
             <p class="text-slate-400 mb-4 font-bold uppercase tracking-widest text-sm">Napisz do nas</p>
             <a href="mailto:mpktechdev@gmail.com" class="text-xl md:text-3xl font-bold text-purple-400 hover:text-green-400 transition break-all underline decoration-slate-700 underline-offset-8">
@@ -280,6 +292,7 @@
         </div>
     </div>
 </section>
+
 
 <footer class="py-12 text-center text-slate-600 border-t border-slate-800 text-[10px] uppercase tracking-widest">
     Zdjęcia Inwestycje &copy; 2026. System Dokumentacji FTTH.
