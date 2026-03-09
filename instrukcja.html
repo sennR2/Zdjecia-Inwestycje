@@ -35,27 +35,33 @@
             </p>
         </section>
 
-        <section class="space-y-6">
-            <div class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700">
-                <h3 class="text-white font-bold mb-2">✨ Tworzenie projektów</h3>
-                <p class="text-slate-400 text-sm">Automatyczna struktura folderów pozwala na błyskawiczne rozpoczęcie pracy nad nową inwestycją.</p>
+        <section class="mb-16">
+    <div class="bg-slate-800/80 p-8 rounded-[2rem] border border-slate-700 shadow-xl">
+        <h3 class="text-purple-400 font-bold mb-6 uppercase tracking-widest text-xl border-b border-slate-700 pb-4">
+            KROK 1: Aktywacja Licencji 🔐
+        </h3>
+        
+        <div class="text-slate-300 leading-relaxed text-sm space-y-4 mb-8">
+            <p>Zaraz po zainstalowaniu i pierwszym uruchomieniu aplikacji Zdjęcia Inwestycje, zobaczysz ekran blokady. Licencja jest generowana indywidualnie dla Twojego telefonu.</p>
+            <p><strong>Instrukcja aktywacji:</strong></p>
+            <ul class="list-disc ml-5 space-y-2">
+                <li><strong>Kopiowanie ID:</strong> Kliknij palcem w tekst "Twoje ID: [numer_identyfikacyjny]". Aplikacja automatycznie skopiuje ten unikalny kod do schowka Twojego telefonu.</li>
+                <li><strong>Wysłanie zgłoszenia:</strong> Wyślij skopiowane ID na adres e-mail: <a href="mailto:mpktechdev@gmail.com" class="text-green-400 hover:underline">mpktechdev@gmail.com</a>.</li>
+                <li><strong>Odbiór klucza:</strong> W odpowiedzi otrzymasz kod JSON, który zawiera Twoje dane i klucz dostępu.</li>
+                <li><strong>Wklejenie kodu:</strong> Skopiuj całą treść i wklej ją w czarne pole o nazwie "Wklej tutaj otrzymany kod JSON".</li>
+                <li><strong>Finalizacja:</strong> Kliknij zielony przycisk <strong>AKTYWUJ LICENCJĘ</strong>.</li>
+            </ul>
+            <div class="bg-blue-900/30 p-4 rounded-xl border border-blue-500/30 text-blue-300 italic text-xs">
+                💡 Pro-Tip: Jeśli po kliknięciu przycisku ekran nie zmieni się od razu, po prostu zrestartuj aplikację.
             </div>
+        </div>
 
-            <div class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700">
-                <h3 class="text-white font-bold mb-2">📸 Aparat i Galeria</h3>
-                <p class="text-slate-400 text-sm">Rób zdjęcia bezpośrednio z aplikacji lub importuj gotowe pliki z galerii.</p>
-            </div>
-
-            <div class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700">
-                <h3 class="text-white font-bold mb-2">📄 Eksport Raportów</h3>
-                <p class="text-slate-400 text-sm">Generuj dokumentację w formacie PDF lub zestawienia CSV dla biura projektowego.</p>
-            </div>
-
-            <div class="bg-slate-800/80 p-6 rounded-3xl border border-slate-700">
-                <h3 class="text-white font-bold mb-2">☁️ Synchronizacja Dysk Google</h3>
-                <p class="text-slate-400 text-sm">Opcjonalna synchronizacja przesyła dane na Twój prywatny dysk po zalogowaniu i wyrażeniu zgody.</p>
-            </div>
-        </section>
+        <div class="flex justify-center">
+            <img src="screenshot_aktywacja.jpg" alt="Ekran aktywacji licencji" 
+                 class="rounded-xl border border-slate-600 shadow-2xl max-w-full md:max-w-xs">
+        </div>
+    </div>
+</section>
 
         <section class="mt-16 text-center border-t border-slate-800 pt-10 text-slate-500">
             <p class="text-[10px] uppercase tracking-widest mb-4">Technologie: Kotlin + Android SDK 34 • Jetpack • Google Drive API</p>
