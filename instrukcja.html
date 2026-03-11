@@ -56,10 +56,24 @@
             </div>
         </div>
 
-        <div class="flex justify-center">
-            <img src="screenshot_aktywacja.jpg" alt="Ekran aktywacji licencji" 
-                 class="rounded-xl border border-slate-600 shadow-2xl max-w-full md:max-w-xs">
+        <div class="flex flex-col items-center gap-4 mt-8">
+    <div class="relative group">
+        <div class="relative mx-auto border-[6px] border-slate-700 rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 w-[260px] h-[540px]">
+            <img id="img-krok1" src="1.jpg" class="w-full h-full object-cover transition-opacity duration-300" alt="Screen aplikacji">
         </div>
+
+        <button onclick="changeImg('img-krok1', -1)" class="absolute top-1/2 -left-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-purple-600 p-3 rounded-full border border-slate-600 transition-all">
+            <i class="fas fa-chevron-left text-white"></i>
+        </button>
+        <button onclick="changeImg('img-krok1', 1)" class="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-purple-600 p-3 rounded-full border border-slate-600 transition-all">
+            <i class="fas fa-chevron-right text-white"></i>
+        </button>
+    </div>
+    
+    <div id="data-img-krok1" class="hidden" data-images="1.jpg,2.jpg,3.jpg" data-index="0"></div>
+    <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Kliknij strzałki, aby zobaczyć więcej</p>
+</div>
+
     </div>
 </section>
 
@@ -392,5 +406,31 @@
         </section>
     </main>
 
+    <script>
+function changeImg(id, direction) {
+    const dataContainer = document.getElementById('data-' + id);
+    const imgElement = document.getElementById(id);
+    
+    // Pobierz listę zdjęć i aktualny indeks
+    const images = dataContainer.getAttribute('data-images').split(',');
+    let currentIndex = parseInt(dataContainer.getAttribute('data-index'));
+    
+    // Oblicz nowy indeks (z pętlą: po ostatnim wraca do pierwszego)
+    currentIndex += direction;
+    if (currentIndex >= images.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    
+    // Zapisz nowy indeks
+    dataContainer.setAttribute('data-index', currentIndex);
+    
+    // Zmień zdjęcie z efektem płynności
+    imgElement.style.opacity = '0.3';
+    setTimeout(() => {
+        imgElement.src = images[currentIndex].trim();
+        imgElement.style.opacity = '1';
+    }, 150);
+}
+    </script>
+    
 </body>
 </html>
