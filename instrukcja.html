@@ -127,6 +127,7 @@
         </section>
 
         <section class="mb-16">
+    <div<section class="mb-16">
     <div class="bg-slate-800/80 p-8 rounded-[2rem] border border-slate-700 shadow-xl">
         <h3 class="text-purple-400 font-bold mb-6 uppercase tracking-widest text-xl border-b border-slate-700 pb-4">
             KROK 3: Zarządzanie Projektami i Statusami 📂
@@ -142,10 +143,40 @@
                 <li><strong>Zatwierdzenie:</strong> Kliknij DODAJ. Aplikacja automatycznie przygotuje strukturę folderów dla tego projektu.</li>
             </ul>
 
+            <div class="bg-purple-900/30 p-6 rounded-2xl border border-purple-500/50 mt-8 mb-8">
+                <h4 class="text-white font-bold mb-3 flex items-center gap-2">
+                    📄 Inteligentny Import z PDF (Automatyzacja)
+                </h4>
+                <p class="text-slate-300 text-xs mb-4">
+                    To najbardziej zaawansowana funkcja aplikacji, która <strong>oszczędza około 3-5 minut</strong> przy zakładaniu projektu. System analizuje dokumentację i wykonuje pracę za Ciebie.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-purple-300 font-bold text-xs uppercase mb-2">Jak to działa?</p>
+                        <ul class="list-disc ml-4 space-y-1 text-xs">
+                            <li>Kliknij ikonę <strong>PLUS (+)</strong> na ekranie głównym.</li>
+                            <li>Wybierz opcję: <strong>"Importuj z PDF (Automatyzacja)"</strong>.</li>
+                            <li>Wskaż plik z dokumentacją w pamięci telefonu.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-purple-300 font-bold text-xs uppercase mb-2">Co dzieje się automatycznie?</p>
+                        <ul class="list-disc ml-4 space-y-1 text-xs">
+                            <li><strong>Nazwa Projektu:</strong> Skonfigurowana według wzoru: <em>Miejscowość_NrSAP</em>.</li>
+                            <li><strong>Struktura:</strong> Tworzy 9 folderów z ustawień automatyzacji.</li>
+                            <li><strong>Baza Kabli:</strong> Wyciąga numery kabli (np. OKH-01) i dodaje je do listy wyboru w folderach Studnie/Słupy.</li>
+                            <li><strong>Archiwizacja:</strong> Kopia PDF trafia do folderu projektu (dostęp offline).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-purple-900/50 rounded-lg border border-purple-400/30 text-[11px]">
+                    💡 <strong>Tip:</strong> Jeśli w PDF jest wiele kabli, wszystkie pojawią się na liście rozwijanej. Pamiętaj, aby wskazać pełną ścieżkę pliku (nie "szybki wybór").
+                </div>
+            </div>
             <p class="font-bold text-white mt-6">Inteligentne Filtrowanie i Kolory (Statusy)</p>
             <p>Abyś nie pogubił się w gąszczu zleceń, system oferuje optyczną segregację projektów:</p>
             <ul class="space-y-2 ml-2">
-                <li>🟣 <span class="font-bold text-purple-400">WSZYSTKO:</span> Widok zbiorczy wszystkich Twoich projektów.</li>
                 <li>🟢 <span class="font-bold text-green-400">GOTOWE:</span> Projekty ze skończoną dokumentacją, czekające na oddanie.</li>
                 <li>🔵 <span class="font-bold text-blue-400">ROZPOCZĘTE:</span> Aktywne budowy, nad którymi aktualnie pracujesz.</li>
                 <li>⚪ <span class="font-bold text-slate-300">ROZLICZONE:</span> Archiwalne projekty, które zostały już zamknięte finansowo.</li>
@@ -154,7 +185,7 @@
 
             <p class="font-bold text-white mt-6">Szybkie Wyszukiwanie i Edycja</p>
             <ul class="list-none space-y-2">
-                <li>🔍 <strong>Wyszukiwarka:</strong> Na górze ekranu znajduje się pasek wyszukiwania. Wpisz fragment nazwy lub numeru projektu, aby błyskawicznie go odnaleźć (działa zarówno dla projektów lokalnych, jak i tych w chmurze).</li>
+                <li>🔍 <strong>Wyszukiwarka:</strong> Na górze ekranu znajduje się pasek wyszukiwania. Wpisz fragment nazwy lub numeru projektu, aby błyskawicznie go odnaleźć.</li>
                 <li>✏️ <strong>Edycja i Usuwanie:</strong> Przytrzymaj dłużej palec na danym projekcie, aby zmienić jego nazwę, przypisać mu nowy kolor statusu lub całkowicie go usunąć.</li>
             </ul>
 
@@ -164,25 +195,25 @@
         </div>
 
         <div class="flex flex-col items-center gap-4 mt-8">
-    <div class="relative group">
-        <div class="relative mx-auto border-[6px] border-slate-700 rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 w-[260px] h-[540px]">
-            <img id="img-krok3" src="img/7.jpg" class="w-full h-full object-cover transition-opacity duration-300" alt="Screen aplikacji">
+            <div class="relative group">
+                <div class="relative mx-auto border-[6px] border-slate-700 rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-900 w-[260px] h-[540px]">
+                    <img id="img-krok3" src="img/7.jpg" class="w-full h-full object-cover transition-opacity duration-300" alt="Screen aplikacji">
+                </div>
+
+                <button onclick="changeImg('img-krok3', -1)" class="absolute top-1/2 -left-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-purple-600 p-3 rounded-full border border-slate-600 transition-all">
+                    <i class="fas fa-chevron-left text-white"></i>
+                </button>
+                <button onclick="changeImg('img-krok3', 1)" class="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-purple-600 p-3 rounded-full border border-slate-600 transition-all">
+                    <i class="fas fa-chevron-right text-white"></i>
+                </button>
+            </div>
+            
+            <div id="data-img-krok3" class="hidden" data-images="img/50.jpg,img/7.jpg,img/8.jpg,img/9.jpg,img/10.jpg,img/11.jpg,img/12.jpg" data-index="0"></div>
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Kliknij strzałki, aby zobaczyć więcej</p>
         </div>
-
-        <button onclick="changeImg('img-krok3', -1)" class="absolute top-1/2 -left-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-purple-600 p-3 rounded-full border border-slate-600 transition-all">
-            <i class="fas fa-chevron-left text-white"></i>
-        </button>
-        <button onclick="changeImg('img-krok3', 1)" class="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-slate-800/80 hover:bg-purple-600 p-3 rounded-full border border-slate-600 transition-all">
-            <i class="fas fa-chevron-right text-white"></i>
-        </button>
-    </div>
-    
-    <div id="data-img-krok3" class="hidden" data-images="img/7.jpg,img/8.jpg,img/9.jpg,img/10.jpg,img/11.jpg,img/12.jpg" data-index="0"></div>
-    <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Kliknij strzałki, aby zobaczyć więcej</p>
-</div>
-
     </div>
 </section>
+
 
        <section class="mb-16">
     <div class="bg-slate-800/80 p-8 rounded-[2rem] border border-slate-700 shadow-xl">
@@ -241,7 +272,7 @@
         </button>
     </div>
     
-    <div id="data-img-krok4" class="hidden" data-images="img/13.jpg,img/14.jpg,img/15.jpg,img/16.jpg,img/17.jpg,img/18.jpg,img/19.jpg,img/20.jpg,img/21.jpg,img/22.jpg,img/23.jpg,img/24.jpg,img/37.jpg,img/38.jpg" data-index="0"></div>
+    <div id="data-img-krok4" class="hidden" data-images="img/13.jpg,img/14.jpg,img/16.jpg,img/17.jpg,img/18.jpg,img/19.jpg,img/20.jpg,img/21.jpg,img/22.jpg,img/23.jpg,img/24.jpg,img/37.jpg,img/38.jpg" data-index="0"></div>
     <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Kliknij strzałki, aby zobaczyć więcej</p>
 </div>
 
@@ -308,7 +339,7 @@
         </button>
     </div>
     
-    <div id="data-img-krok5" class="hidden" data-images="img/25.jpg,img/26.jpg,img/27.jpg,img/28.jpg,img/29.jpg,img/30.jpg,img/31.jpg,img/32.jpg" data-index="0"></div>
+    <div id="data-img-krok5" class="hidden" data-images="img/25.jpg,img/15.jpg,img/26.jpg,img/27.jpg,img/28.jpg,img/29.jpg,img/30.jpg,img/31.jpg,img/32.jpg" data-index="0"></div>
     <p class="text-[10px] text-slate-500 uppercase tracking-widest italic">Kliknij strzałki, aby zobaczyć więcej</p>
 </div>
             
