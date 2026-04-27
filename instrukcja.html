@@ -614,28 +614,44 @@
 <section class="mb-16">
     <div class="bg-slate-800/80 p-8 rounded-[2rem] border border-slate-700 shadow-xl">
         <h3 class="text-orange-400 font-bold mb-6 uppercase tracking-widest text-xl border-b border-slate-700 pb-4">
-            KROK 10: Ustawienia systemowe i GPS ⚙️
+            KROK 10: OPTYMALIZACJA I USTAWIENIA SYSTEMOWE ⚙️
         </h3>
         
         <div class="text-slate-300 leading-relaxed text-sm space-y-6 mb-8">
-            <p>Aby uniknąć problemów z brakiem współrzędnych na zdjęciach lub przerywaniem wysyłania plików, skonfiguruj telefon według poniższych wytycznych.</p>
+            <p>Aby aplikacja działała w 100% stabilnie, a każde zdjęcie miało precyzyjne współrzędne GPS, musisz odpowiednio skonfigurować system Android. Bez tych ustawień system może blokować synchronizację w tle lub zapisywać zdjęcia bez lokalizacji.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600">
-                    <p class="font-bold text-white mb-2 underline text-emerald-400">📍 Lokalizacja (GPS)</p>
-                    <p class="text-xs">W ustawieniach systemowego aparatu włącz <strong>"Tagi lokalizacji"</strong>. Sprawdź też w uprawnieniach aplikacji, czy Aparat ma dostęp do lokalizacji. Bez tego zdjęcia nie będą miały przypisanych współrzędnych.</p>
-                </div>
-                
-                <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600">
-                    <p class="font-bold text-white mb-2 underline text-emerald-400">🔋 Bateria (Synchronizacja)</p>
-                    <p class="text-xs">W informacjach o aplikacji wybierz użycie baterii: <strong>"Bez ograniczeń"</strong>. Umożliwi to wysyłanie zdjęć do chmury w tle, nawet przy zablokowanym ekranie.</p>
-                </div>
+            <div>
+                <p class="font-bold text-white mb-2">1. Geolokalizacja w aparacie systemowym 📍</p>
+                <p>Twoja aplikacja korzysta z modułu aparatu w telefonie. Jeśli on nie ma zgody na GPS, zdjęcie nie będzie miało współrzędnych.</p>
+                <ul class="list-disc ml-5 space-y-1">
+                    <li><strong>Aparat:</strong> Wejdź w ustawienia swojego systemowego aparatu i upewnij się, że opcja „Tagi lokalizacji” lub „Zapisuj lokalizację” jest włączona.</li>
+                    <li><strong>Uprawnienia:</strong> Wejdź w Ustawienia telefonu -> Aplikacje -> Aparat -> Uprawnienia i sprawdź, czy dostęp do lokalizacji jest dozwolony.</li>
+                </ul>
             </div>
 
-            <div class="bg-orange-900/20 p-4 rounded-xl border border-orange-700/50 mt-4">
-                <p class="text-xs text-orange-200 italic">
-                    <strong>Uwaga:</strong> Jeśli pozostawisz domyślne ograniczenia baterii, telefon może przerwać wysyłanie zdjęć po schowaniu go do kieszeni. W trybie "Bez ograniczeń" aplikacja nadal zużywa bardzo mało energii.
-                </p>
+            <div>
+                <p class="font-bold text-white mb-2">2. Bateria: Tryb „Bez ograniczeń” (Kluczowe!) 🔋</p>
+                <p>Android domyślnie usypia aplikacje po zablokowaniu ekranu, co przerywa wysyłanie zdjęć do chmury.</p>
+                <ul class="list-disc ml-5 space-y-1">
+                    <li><strong>Ustawienie:</strong> Znajdź ikonę aplikacji na pulpicie, przytrzymaj ją i wejdź w Informacje o aplikacji -> Oszczędzanie baterii (lub Bateria).</li>
+                    <li><strong>Wybierz:</strong> „Bez ograniczeń”.</li>
+                </ul>
+                <p class="mt-2 italic text-emerald-400">Dlaczego? Pozwoli to na pełną synchronizację zdjęć nawet wtedy, gdy telefon masz w kieszeni lub gdy ekran jest zablokowany. Spokojnie – nasza aplikacja zużywa śladowe ilości energii w porównaniu do innych apek z GPS.</p>
+            </div>
+
+            <div>
+                <p class="font-bold text-white mb-2">3. Powiadomienia o synchronizacji 🔔</p>
+                <p>Android czasem z automatu blokuje powiadomienia nowych aplikacji.</p>
+                <ul class="list-disc ml-5 space-y-1">
+                    <li><strong>Sprawdź:</strong> W ustawieniach aplikacji upewnij się, że Powiadomienia są włączone.</li>
+                    <li><strong>Efekt:</strong> Będziesz widzieć na górnym pasku status wysyłania zdjęć do chmury Google Drive. Dzięki temu masz pewność, że raport jest już bezpieczny na serwerze.</li>
+                </ul>
+            </div>
+
+            <div class="bg-orange-900/20 p-4 rounded-xl border border-orange-700/50 mt-6">
+                <p class="font-bold text-orange-400 mb-2 underline">4. Ważna uwaga dotycząca synchronizacji ⚠️</p>
+                <p class="text-xs">Jeśli nie zmienisz ustawień baterii na „Bez ograniczeń”, musisz pamiętać o jednej rzeczy: Przy standardowych ustawieniach Androida, synchronizacja działa poprawnie tylko wtedy, gdy aplikacja jest otwarta na ekranie głównym.</p>
+                <p class="text-xs mt-2 italic">Jeśli zminimalizujesz apkę lub zablokujesz telefon przy włączonym oszczędzaniu energii, system może przerwać proces wysyłania. Dlatego dla świętego spokoju ustaw „Bez ograniczeń”.</p>
             </div>
 
             <div class="flex flex-col items-center gap-4 mt-8">
@@ -651,12 +667,14 @@
                         <i class="fas fa-chevron-right text-white"></i>
                     </button>
                 </div>
+                
                 <div id="data-img-krok10" class="hidden" data-images="img/66.jpg,img/67.jpg,img/68.jpg" data-index="0"></div>
-                <p class="text-[10px] text-slate-500 uppercase tracking-widest italic text-center">Ustawienia baterii i uprawnień Android</p>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest italic text-center">Optymalizacja baterii i uprawnienia GPS</p>
             </div>
         </div>
     </div>
 </section>
+
         
 
 
